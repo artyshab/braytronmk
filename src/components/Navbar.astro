@@ -1,0 +1,82 @@
+---
+import companylogo from "../assets/braytron-logo.svg";
+---
+
+<div class="navbar-container">
+  <div class="navbar-wrapper">
+    <div class="logo-image">
+      <img src={companylogo.src} alt="Braytron_Logo" />
+    </div>
+    <div class="links">
+      <ul>
+        <li>Company</li>
+        <li>Catalog</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div class="lang-option">
+      <select name="languages" id="lang">
+        <option value="en">🇬🇧 English</option>
+        <option value="mk">🇲🇰 Macedonian</option>
+        <option value="al">🇦🇱 Albanian</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<style>
+  .navbar-container {
+  width: 100%;
+  background-color: #f5f7fa;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.navbar-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo-image img {
+  width: 120px;
+}
+
+.links ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.links ul li {
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  padding: 8px 10px;
+  width: 80px;
+  text-align: center;
+  border-radius: 10px ;
+}
+
+.links ul li:hover {
+   background-color: blue;
+   color: white;
+   transition: 0.3s all ease;
+}
+
+.lang-option select {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+</style>

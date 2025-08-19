@@ -1,0 +1,48 @@
+---
+import prod1 from "../assets/product-images/prod1.jpg";
+import prod2 from "../assets/product-images/prod2.jpg";
+import prod3 from "../assets/product-images/prod3.jpg";
+import prod4 from "../assets/product-images/prod4.jpg";
+import prod5 from "../assets/product-images/prod5.jpg";
+import prod6 from "../assets/product-images/prod6.jpg";
+import prod7 from "../assets/product-images/prod7.jpg";
+---
+
+<div class="product-container">
+  <div class="product">
+    <img src={prod1.src} alt="Product_Image" />
+    <img src={prod2.src} alt="Product_Image" />
+    <img src={prod3.src} alt="Product_Image" />
+    <img src={prod4.src} alt="Product_Image" />
+    <img src={prod5.src} alt="Product_Image" />
+    <img src={prod6.src} alt="Product_Image" />
+    <img src={prod7.src} alt="Product_Image" />
+  </div>
+</div>
+
+<style>
+  .product-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0; /* anchor it to the bottom */
+    z-index: 10; /* higher than swiper content */
+    width: 70%;
+    background-color: white;
+    padding: 1rem;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product img {
+    width: 140px;
+    cursor: pointer !important;
+  }
+</style>

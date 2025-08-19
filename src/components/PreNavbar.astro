@@ -1,0 +1,52 @@
+---
+import facebook from "../assets/socials-img/facebook.svg";
+import instagram from "../assets/socials-img/instagram.svg";
+import linkedin from "../assets/socials-img/linkedin.svg";
+---
+
+<div class="prenavbar-container">
+  <div class="prenavbar-wrapper">
+    <p>info@braytron.com</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/itsbrayton/"
+        ><img src={instagram.src} alt="Instagram_Logo" /></a
+      >
+      <a href="https://www.facebook.com/braytron/"
+        ><img src={facebook.src} alt="Facebook_Logo" /></a
+      >
+      <a href="https://rs.linkedin.com/company/braytron">
+        <img src={linkedin.src} alt="Linkedin_Logo" /></a
+      >
+    </div>
+  </div>
+</div>
+
+<style>
+  .prenavbar-container {
+    width: 100%;
+    background-color: blue;
+  }
+  .prenavbar-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0.5rem 0;
+  }
+  p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+  }
+  .socials {
+    display: flex;
+    gap: 15px;
+  }
+  .socials img {
+    width: 25px;
+    height: 25px;
+  }
+</style>

@@ -1,0 +1,139 @@
+---
+import ProductsSection from "./ProductsSection.astro";
+---
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<div class="swiper-container swiper-fade">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" style="background-image: url('/banner-1.jpg')">
+      <div class="hero-text">
+        <h1>Innovative Lighting</h1>
+        <p>Brilliant solutions for every space.</p>
+        <button id="btn1">Explore</button>
+      </div>
+    </div>
+
+    <div class="swiper-slide" style="background-image: url('/banner-2.jpg')">
+      <div class="hero-text">
+        <h1>Efficient & Elegant</h1>
+        <p>Lighting that saves energy and looks great.</p>
+        <button id="btn2">Explore</button>
+      </div>
+    </div>
+
+    <div class="swiper-slide" style="background-image: url('/banner-3.jpg')">
+      <div class="hero-text">
+        <h1>Trusted Worldwide</h1>
+        <p>Used in over 50 countries and growing.</p>
+        <button id="btn3">Explore</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional navigation -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <ProductsSection />
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer
+></script>
+
+<script type="module" defer>
+  import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+  window.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".swiper-container", {
+      effect: "fade",
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      fadeEffect: {
+        crossFade: true,
+      },
+    });
+  });
+</script>
+
+<style>
+  .swiper-container {
+    width: 100%;
+    min-height: 80vh;
+    position: relative;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center center;
+    height: 65vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text {
+    color: white;
+    text-align: center;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 8px;
+  }
+
+  .hero-text button {
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+  }
+
+  #btn1 {
+    background-color: #7924a5;
+    color: white;
+  }
+  #btn2 {
+    background-color: #00a69c;
+    color: white;
+  }
+  #btn3 {
+    background-color: #ff7d01;
+    color: white;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+    .hero-text p {
+      font-size: 1rem;
+    }
+  }
+</style>
