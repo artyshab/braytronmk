@@ -6,6 +6,7 @@ import prod4 from "../assets/product-images/prod4.jpg";
 import prod5 from "../assets/product-images/prod5.jpg";
 import prod6 from "../assets/product-images/prod6.jpg";
 import prod7 from "../assets/product-images/prod7.jpg";
+import prod8 from "../assets/product-images/prod8.jpg";
 ---
 
 <div class="product-container">
@@ -17,6 +18,7 @@ import prod7 from "../assets/product-images/prod7.jpg";
     <img src={prod5.src} alt="Product_Image" />
     <img src={prod6.src} alt="Product_Image" />
     <img src={prod7.src} alt="Product_Image" />
+    <img src={prod8.src} alt="Product_Image" />
   </div>
 </div>
 
@@ -25,24 +27,61 @@ import prod7 from "../assets/product-images/prod7.jpg";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0; /* anchor it to the bottom */
-    z-index: 10; /* higher than swiper content */
-    width: 70%;
+    bottom: 0;
+    z-index: 10;
+    width: 72%;
     background-color: white;
-    padding: 1rem;
+    padding: 1rem 0;
     margin: 0 auto;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
 
   .product {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap; 
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; 
+    gap: 15px; 
   }
 
   .product img {
-    width: 140px;
+    width: 120px;
+    max-width: 40vw; 
     cursor: pointer !important;
+    transition: 0.3s all ease;
+  }
+  .product img:hover {
+    transform: translateY(-10px);
+    transition: 0.3s all ease;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .product-container {
+      width: 90%;
+    }
+    .product img {
+      width: 120px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .product-container {
+      position: static; 
+      transform: none;
+      margin-top: 1rem;
+      width: 90%;
+    }
+    .product {
+      justify-content: center;
+    }
+    .product img {
+      width: 100px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .product img {
+      width: 80px;
+    }
   }
 </style>

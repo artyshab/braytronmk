@@ -10,30 +10,31 @@ import linkedin from "../assets/socials-img/linkedin.svg";
     <div class="logo"><img src={companylogo.src} alt="Braytron_Logo" /></div>
     <div class="links">
       <ul>
-        <li>Company</li>
-        <li>Catalog</li>
-        <li>Contact</li>
+         <a href="company">Company</a>
+        <a href="">Catalog</a>
+        <a href="contact">Contact</a>
       </ul>
     </div>
     <div class="socials">
-      <a href="https://www.instagram.com/itsbrayton/"
-        ><img src={instagram.src} alt="Instagram_Logo" /></a
-      >
-      <a href="https://www.facebook.com/braytron/"
-        ><img src={facebook.src} alt="Facebook_Logo" /></a
-      >
+      <a href="https://www.instagram.com/itsbrayton/">
+        <img src={instagram.src} alt="Instagram_Logo" />
+      </a>
+      <a href="https://www.facebook.com/braytron/">
+        <img src={facebook.src} alt="Facebook_Logo" />
+      </a>
       <a href="https://rs.linkedin.com/company/braytron">
-        <img src={linkedin.src} alt="Linkedin_Logo" /></a
-      >
+        <img src={linkedin.src} alt="Linkedin_Logo" />
+      </a>
     </div>
   </div>
+
   <div class="border"></div>
 
   <div class="footer-contact">
     <p id="address">Skopje 1000 Skopje, North Macedonia</p>
     <div class="contact">
-    <p>Phone : 02 100 100</p>
-    <p>Email : info@braytron.com</p>
+      <p>Phone : 02 100 100</p>
+      <p>Email : info@braytron.com</p>
     </div>
   </div>
 </div>
@@ -52,9 +53,10 @@ import linkedin from "../assets/socials-img/linkedin.svg";
     align-items: center;
     justify-content: space-between;
     padding: 1rem 0.5rem;
+    flex-wrap: wrap; /* allow wrapping */
   }
 
-  .logo-image img {
+  .logo img {
     width: 120px;
   }
 
@@ -66,24 +68,23 @@ import linkedin from "../assets/socials-img/linkedin.svg";
     padding: 0;
   }
 
-  .links ul li {
+  .links ul a {
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     padding: 8px 10px;
-    width: 80px;
     text-align: center;
     color: white;
+    text-decoration: none;
   }
 
   .socials {
     display: flex;
     gap: 20px;
-    width: 190px;
   }
+
   .socials img {
     width: 30px;
-    gap: 15px;
   }
 
   .border {
@@ -94,10 +95,12 @@ import linkedin from "../assets/socials-img/linkedin.svg";
 
   .footer-contact {
     color: white;
-  }
-  .footer-contact #address{
     text-align: center;
-    line-height: 0;
+    padding-bottom: 1rem;
+  }
+
+  .footer-contact #address {
+    margin-bottom: 0.5rem;
   }
 
   .contact {
@@ -105,5 +108,30 @@ import linkedin from "../assets/socials-img/linkedin.svg";
     gap: 30px;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* 📱 Mobile Styles */
+  @media screen and (max-width: 768px) {
+    .footer-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .links ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .socials {
+      justify-content: center;
+    }
+
+    .contact {
+      flex-direction: column;
+      gap: 8px;
+    }
   }
 </style>

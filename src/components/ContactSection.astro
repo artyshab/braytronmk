@@ -1,0 +1,190 @@
+---
+import formimage from "../assets/braytron-contact.png";
+---
+
+<div class="contact-container">
+  <div class="contact-wrapper">
+    <div class="contact-text">
+      <p>Contact us</p>
+      <p>
+        Want to know about our products? Let us connect you with one of our
+        sales experts who can guide you in finding the right product tailored to
+        your needs.
+      </p>
+    </div>
+    <div class="contact-form">
+      <form action="submit">
+        <p>Fill out the form with your contact information:</p>
+
+        <div class="name">
+          <input type="text" placeholder="First Name*" name="firstname" />
+          <input type="text" placeholder="Last Name*" name="lastname" />
+        </div>
+
+        <input type="text" placeholder="Email*" name="email" />
+        <input type="text" placeholder="Phone number*" name="number" />
+        <textarea name="message" id="message" placeholder="Message*"></textarea>
+        <button>Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .contact-container {
+    min-height: 90vh;
+    width: 100%;
+    background-image: url("../assets/braytron-contact.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .contact-text {
+    width: 40%;
+  }
+
+  .contact-text :nth-child(1) {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .contact-text :nth-child(2) {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .contact-form {
+    width: 60%;
+  }
+
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 2rem;
+    margin: auto;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-form p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .contact-form form input,
+  .contact-form form textarea {
+    width: 100%;
+    border: 1px solid lightgray;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: none;
+    padding: 12px 14px;
+    box-sizing: border-box;
+  }
+
+  .contact-form form input {
+    height: 50px;
+  }
+
+  .contact-form form textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .contact-form form input:focus,
+  .contact-form form textarea:focus {
+    border: 1px solid blue;
+  }
+
+  .contact-form form button {
+    width: 100%;
+    height: 55px;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: blue;
+    transition: background 0.3s;
+  }
+
+  .contact-form form button:hover {
+    background-color: darkblue;
+  }
+
+  .name {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .name input {
+    flex: 1;
+  }
+
+  @media screen and (max-width: 992px) {
+    .contact-container {
+      background-image: none;
+      padding: 2rem 0;
+    }
+    .contact-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .contact-text :nth-child(1) {
+      font-size: 1.8rem;
+    }
+
+    .contact-text,
+    .contact-form {
+      width: 100%;
+    }
+
+    .contact-text {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .name {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-form form {
+      padding: 1.5rem;
+    }
+
+    .contact-form form input,
+    .contact-form form textarea {
+      font-size: 0.95rem;
+    }
+
+    .contact-form form button {
+      height: 50px;
+      font-size: 0.95rem;
+    }
+  }
+</style>

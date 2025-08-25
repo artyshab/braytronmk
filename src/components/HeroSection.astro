@@ -70,14 +70,14 @@ import ProductsSection from "./ProductsSection.astro";
   .swiper-container {
     width: 100%;
     min-height: 80vh;
-    position: relative;
+    max-width: 100vw; 
+    position: relative;  
   }
 
   .swiper-slide {
     background-size: cover;
     background-position: center center;
     height: 65vh;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,6 +90,16 @@ import ProductsSection from "./ProductsSection.astro";
     background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 8px;
+    max-width: 90%;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
   }
 
   .hero-text button {
@@ -97,7 +107,7 @@ import ProductsSection from "./ProductsSection.astro";
     font-weight: 600;
     border: none;
     border-radius: 5px;
-    padding: 5px 15px;
+    padding: 10px 20px;
     cursor: pointer;
   }
 
@@ -114,26 +124,54 @@ import ProductsSection from "./ProductsSection.astro";
     color: white;
   }
 
-  .hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero-text p {
-    font-size: 1.2rem;
-  }
-
   .swiper-button-next,
   .swiper-button-prev {
     color: white;
   }
 
-  @media (max-width: 768px) {
+  /* 📱 Tablets */
+  @media (max-width: 1024px) {
     .hero-text h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* 📱 Mobile */
+  @media (max-width: 768px) {
+    .swiper-slide {
+      height: 55vh;
+    }
+    .hero-text {
+      padding: 1rem;
+    }
+    .hero-text h1 {
+      font-size: 1.8rem;
     }
     .hero-text p {
       font-size: 1rem;
     }
+    .hero-text button {
+      font-size: 1rem;
+      padding: 8px 16px;
+    }
   }
-</style>
+
+  /* 📱 Small phones */
+  @media (max-width: 480px) {
+    .swiper-slide {
+      height: 45vh;
+    }
+    .hero-text h1 {
+      font-size: 1.4rem;
+    }
+    .hero-text p {
+      font-size: 0.9rem;
+    }
+    .hero-text button {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  }

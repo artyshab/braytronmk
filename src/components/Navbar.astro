@@ -1,19 +1,25 @@
 ---
 import companylogo from "../assets/braytron-logo.svg";
+import menuBtn from "../assets/hamb-btn.svg";
 ---
 
 <div class="navbar-container">
   <div class="navbar-wrapper">
     <div class="logo-image">
-      <img src={companylogo.src} alt="Braytron_Logo" />
+      <a href="/"><img src={companylogo.src} alt="Braytron_Logo" /></a>
     </div>
     <div class="links">
       <ul>
-        <li>Company</li>
-        <li>Catalog</li>
-        <li>Contact</li>
+        <a href="company">Company</a>
+        <a href="">Catalog</a>
+        <a href="contact">Contact</a>
       </ul>
     </div>
+
+    <div class="menu-btn">
+      <img src={menuBtn.src} alt="Menu_Button" />
+    </div>
+
     <div class="lang-option">
       <select name="languages" id="lang">
         <option value="en">🇬🇧 English</option>
@@ -22,61 +28,166 @@ import companylogo from "../assets/braytron-logo.svg";
       </select>
     </div>
   </div>
+
+  <div class="menu-slider">
+    <div class="links-slider">
+      <a href="company">Company</a>
+      <a href="">Catalog</a>
+      <a href="contact">Contact</a>
+    </div>
+  </div>
 </div>
+
+<div class="menu-overlay"></div>
 
 <style>
   .navbar-container {
-  width: 100%;
-  background-color: #f5f7fa;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
+    width: 100%;
+    background-color: #f5f7fa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+  }
 
-.navbar-wrapper {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
+  .navbar-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
 
-.logo-image img {
-  width: 120px;
-}
+  .logo-image a img {
+    width: 120px;
+  }
 
-.links ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
+  .links ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
 
-.links ul li {
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s all ease;
-  padding: 8px 10px;
-  width: 80px;
-  text-align: center;
-  border-radius: 10px ;
-}
+  .links ul a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    padding: 8px 10px;
+    width: 80px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+  }
 
-.links ul li:hover {
-   background-color: blue;
-   color: white;
-   transition: 0.3s all ease;
-}
+  .links ul a:hover {
+    background-color: blue;
+    color: white;
+    transition: 0.3s all ease;
+  }
 
-.lang-option select {
-  padding: 0.4rem 0.7rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: white;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
-}
+  .menu-btn {
+    display: none;
+  }
 
+  .menu-btn img {
+    width: 40px;
+  }
+
+  .lang-option select {
+    padding: 0.4rem 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .menu-slider {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    min-height: 100vh;
+    height: auto;
+    right: 100%;
+    width: 80%;
+    background-color: white;
+    z-index: 10;
+    transition: 0.3s all ease;
+  }
+
+  .menu-slider.active {
+    right: 30%;
+    transition: 0.3s all ease;
+  }
+
+  .links-slider {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .links-slider {
+    :nth-child(1) {
+      border-top: 2px solid white;
+    }
+  }
+
+  .links-slider a{
+    text-align: right;
+    margin: 0;
+    background-color: blue;
+    border-bottom: 2px solid white;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    display: none;
+  }
+
+  .menu-overlay.overlay-active {
+    display: block;
+  }
+
+  @media screen and (max-width: 768px) {
+    .links {
+      display: none;
+    }
+
+    .lang-option {
+      display: none;
+    }
+
+    .menu-btn {
+      display: block;
+    }
+  }
 </style>
+
+<script is:inline>
+  const menuSlider = document.querySelector(".menu-slider");
+  const menuBtn = document.querySelector(".menu-btn");
+  const overlay = document.querySelector(".menu-overlay");
+
+  menuBtn?.addEventListener("click", () => {
+    menuSlider?.classList.toggle("active");
+    overlay?.classList.toggle("overlay-active");
+  });
+
+  overlay?.addEventListener("click", () => {
+    menuSlider?.classList.remove("active");
+    overlay?.classList.remove("overlay-active");
+  });
+</script>
