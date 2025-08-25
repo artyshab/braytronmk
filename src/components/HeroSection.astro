@@ -1,5 +1,5 @@
 ---
-import ProductsSection from "./ProductsSection.astro";
+
 ---
 
 <link
@@ -38,7 +38,6 @@ import ProductsSection from "./ProductsSection.astro";
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
 
-  <ProductsSection />
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer
@@ -69,15 +68,17 @@ import ProductsSection from "./ProductsSection.astro";
 <style>
   .swiper-container {
     width: 100%;
-    min-height: 80vh;
-    max-width: 100vw; 
-    position: relative;  
+    height: 80vh; /* instead of min-height */
+    max-width: 100vw;
+    position: relative;
+    overflow: hidden; /* ensures no weird shifting */
   }
 
   .swiper-slide {
+    width: 100%; /* ensure full width */
+    height: 100%; /* match container */
     background-size: cover;
-    background-position: center center;
-    height: 65vh;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,7 +130,6 @@ import ProductsSection from "./ProductsSection.astro";
     color: white;
   }
 
-  /* 📱 Tablets */
   @media (max-width: 1024px) {
     .hero-text h1 {
       font-size: 2.5rem;
@@ -139,8 +139,10 @@ import ProductsSection from "./ProductsSection.astro";
     }
   }
 
-  /* 📱 Mobile */
   @media (max-width: 768px) {
+    .swiper-container {
+      height: 55vh;
+    }
     .swiper-slide {
       height: 55vh;
     }
@@ -159,8 +161,10 @@ import ProductsSection from "./ProductsSection.astro";
     }
   }
 
-  /* 📱 Small phones */
   @media (max-width: 480px) {
+    .swiper-container {
+      height: 45vh;
+    }
     .swiper-slide {
       height: 45vh;
     }
@@ -175,3 +179,4 @@ import ProductsSection from "./ProductsSection.astro";
       padding: 6px 12px;
     }
   }
+</style>
