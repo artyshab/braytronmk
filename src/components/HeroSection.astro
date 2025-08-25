@@ -9,7 +9,10 @@
 
 <div class="swiper-container swiper-fade">
   <div class="swiper-wrapper">
-    <div class="swiper-slide" style="background-image: url('/banner-1.jpg')">
+    <div
+      class="swiper-slide first"
+      style="background-image: url('/banner-1.jpg')"
+    >
       <div class="hero-text">
         <h1>Innovative Lighting</h1>
         <p>Brilliant solutions for every space.</p>
@@ -17,7 +20,10 @@
       </div>
     </div>
 
-    <div class="swiper-slide" style="background-image: url('/banner-2.jpg')">
+    <div
+      class="swiper-slide second"
+      style="background-image: url('/banner-2.jpg')"
+    >
       <div class="hero-text">
         <h1>Efficient & Elegant</h1>
         <p>Lighting that saves energy and looks great.</p>
@@ -25,7 +31,10 @@
       </div>
     </div>
 
-    <div class="swiper-slide" style="background-image: url('/banner-3.jpg')">
+    <div
+      class="swiper-slide third"
+      style="background-image: url('/banner-3.jpg')"
+    >
       <div class="hero-text">
         <h1>Trusted Worldwide</h1>
         <p>Used in over 50 countries and growing.</p>
@@ -34,10 +43,8 @@
     </div>
   </div>
 
-  <!-- Optional navigation -->
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
-
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer
@@ -68,15 +75,15 @@
 <style>
   .swiper-container {
     width: 100%;
-    height: 80vh; /* instead of min-height */
+    height: 80vh;
     max-width: 100vw;
     position: relative;
-    overflow: hidden; /* ensures no weird shifting */
+    overflow: hidden;
   }
 
   .swiper-slide {
-    width: 100%; /* ensure full width */
-    height: 100%; /* match container */
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -146,6 +153,17 @@
     .swiper-slide {
       height: 55vh;
     }
+
+    .first {
+      background-image: url("/banner-1-small.jpg");
+    }
+    .second {
+      background-image: url("/banner-2-small.jpg");
+    }
+    .third {
+      background-image: url("/banner-3-small.jpg");
+    }
+
     .hero-text {
       padding: 1rem;
     }
@@ -168,6 +186,17 @@
     .swiper-slide {
       height: 45vh;
     }
+
+    .first {
+      background-image: url("/banner-1-mobile.jpg") !important;
+    }
+    .second {
+      background-image: url("/banner-2-mobile.jpg") !important;
+    }
+    .third {
+      background-image: url("/banner-3-mobile.jpg") !important;
+    }
+
     .hero-text h1 {
       font-size: 1.4rem;
     }
@@ -180,3 +209,4 @@
     }
   }
 </style>
+
