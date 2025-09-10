@@ -29,7 +29,7 @@ import prod8 from "../assets/product-images/prod8.jpg";
     transform: translateX(-50%);
     bottom: 0;
     z-index: 10;
-    width: 72%;
+    width: auto;
     background-color: white;
     padding: 1rem 0;
     margin: 0 auto;
@@ -41,18 +41,18 @@ import prod8 from "../assets/product-images/prod8.jpg";
   gap: 15px;
   justify-content: flex-start;
   align-items: center;
-  overflow-x: auto;   /* enables horizontal scroll */
-  white-space: nowrap; /* prevents wrapping */
+  overflow-x: auto;  
+  white-space: nowrap; 
   padding: 0 1rem;
-  scrollbar-width: none; /* Firefox: hide scrollbar */
+  scrollbar-width: none; 
 }
 
 .product::-webkit-scrollbar {
-  display: none; /* Chrome/Safari: hide scrollbar */
+  display: none; 
 }
 
 .product img {
-  flex: 0 0 auto; /* prevents shrinking */
+  flex: 0 0 auto; 
   width: 120px;
   cursor: pointer;
   transition: 0.3s all ease;
