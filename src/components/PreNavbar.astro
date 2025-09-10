@@ -6,7 +6,7 @@ import linkedin from "../assets/socials-img/linkedin.svg";
 
 <div class="prenavbar-container">
   <div class="prenavbar-wrapper">
-    <p>info@braytron.com</p>
+    <p>Jadranska Magistrala 114 , North Macedonia 1000</p>
     <div class="socials">
       <a href="https://www.instagram.com/itsbrayton/"
         ><img src={instagram.src} alt="Instagram_Logo" /></a
@@ -50,12 +50,17 @@ import linkedin from "../assets/socials-img/linkedin.svg";
     height: 25px;
   }
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: 768px) {
     .prenavbar-wrapper {
       padding: 1rem;
     }
     .socials {
       display: none;
+    }
+    p {
+      left: 10%;
+      transform: translateX(10%);
+      font-size: 0.7rem;
     }
   }
 </style>

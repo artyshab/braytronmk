@@ -1,5 +1,5 @@
 ---
-import formimage from "../assets/braytron-contact.png";
+
 ---
 
 <div class="contact-container">
@@ -13,31 +13,74 @@ import formimage from "../assets/braytron-contact.png";
       </p>
     </div>
     <div class="contact-form">
-      <form action="submit">
+      <form id="whatsappForm">
         <p>Fill out the form with your contact information:</p>
 
         <div class="name">
-          <input type="text" placeholder="First Name*" name="firstname" />
-          <input type="text" placeholder="Last Name*" name="lastname" />
+          <input
+            type="text"
+            placeholder="First Name*"
+            name="firstname"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Last Name*"
+            name="lastname"
+            required
+          />
         </div>
 
-        <input type="text" placeholder="Email*" name="email" />
-        <input type="text" placeholder="Phone number*" name="number" />
-        <textarea name="message" id="message" placeholder="Message*"></textarea>
-        <button>Send</button>
+        <input type="email" placeholder="Email*" name="email" required />
+        <input type="text" placeholder="Phone number*" name="number" required />
+        <textarea name="message" placeholder="Message*" required></textarea>
+        <button type="submit">Send</button>
       </form>
     </div>
   </div>
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("whatsappForm");
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const firstname = (
+          form.querySelector("[name='firstname']") as HTMLInputElement
+        ).value;
+        const lastname = (
+          form.querySelector("[name='lastname']") as HTMLInputElement
+        ).value;
+        const email = (form.querySelector("[name='email']") as HTMLInputElement)
+          .value;
+        const number = (
+          form.querySelector("[name='number']") as HTMLInputElement
+        ).value;
+        const message = (
+          form.querySelector("[name='message']") as HTMLTextAreaElement
+        ).value;
+
+       
+        const phoneNumber = "38971215691";
+
+        const text = `New Contact:\nName: ${firstname} ${lastname}\nEmail: ${email}\nPhone: ${number}\nMessage: ${message}`;
+
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+        window.open(url, "_blank"); 
+      });
+    }
+  });
+</script>
+
 <style>
   .contact-container {
     min-height: 90vh;
     width: 100%;
-    background-image: url("../assets/braytron-contact.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-color: white;
     display: flex;
     align-items: center;
   }
@@ -81,7 +124,7 @@ import formimage from "../assets/braytron-contact.png";
     max-width: 500px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
 
   .contact-form p {

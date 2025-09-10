@@ -1,5 +1,5 @@
 ---
-
+import Button from "./Button.astro"
 ---
 
 <link
@@ -16,7 +16,7 @@
       <div class="hero-text">
         <h1>Innovative Lighting</h1>
         <p>Brilliant solutions for every space.</p>
-        <button id="btn1">Explore</button>
+        <Button class="btn--purple"/>
       </div>
     </div>
 
@@ -27,7 +27,7 @@
       <div class="hero-text">
         <h1>Efficient & Elegant</h1>
         <p>Lighting that saves energy and looks great.</p>
-        <button id="btn2">Explore</button>
+        <Button class="btn--green"/>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
       <div class="hero-text">
         <h1>Trusted Worldwide</h1>
         <p>Used in over 50 countries and growing.</p>
-        <button id="btn3">Explore</button>
+        <Button class="btn--orange"/>
       </div>
     </div>
   </div>
@@ -119,18 +119,7 @@
     cursor: pointer;
   }
 
-  #btn1 {
-    background-color: #7924a5;
-    color: white;
-  }
-  #btn2 {
-    background-color: #00a69c;
-    color: white;
-  }
-  #btn3 {
-    background-color: #ff7d01;
-    color: white;
-  }
+  
 
   .swiper-button-next,
   .swiper-button-prev {

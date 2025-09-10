@@ -11,7 +11,7 @@ import menuBtn from "../assets/hamb-btn.svg";
     <div class="links">
       <ul>
         <a href="/company">Company</a>
-        <a href="">Catalog</a>
+        <a href="/catalog">Catalog</a>
         <a href="/contact">Contact</a>
       </ul>
     </div>
@@ -21,18 +21,14 @@ import menuBtn from "../assets/hamb-btn.svg";
     </div>
 
     <div class="lang-option">
-      <select name="languages" id="lang">
-        <option value="en">🇬🇧 English</option>
-        <option value="mk">🇲🇰 Macedonian</option>
-        <option value="al">🇦🇱 Albanian</option>
-      </select>
-    </div>
+  <div id="google_translate_element"></div>
+</div>
   </div>
 
   <div class="menu-slider">
     <div class="links-slider">
       <a href="/company">Company</a>
-      <a href="">Catalog</a>
+      <a href="/catalog">Catalog</a>
       <a href="/contact">Contact</a>
     </div>
   </div>
@@ -97,16 +93,6 @@ import menuBtn from "../assets/hamb-btn.svg";
 
   .menu-btn img {
     width: 40px;
-  }
-
-  .lang-option select {
-    padding: 0.4rem 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: white;
-    font-weight: 500;
-    font-size: 1rem;
-    cursor: pointer;
   }
 
   .menu-slider {
@@ -193,4 +179,19 @@ import menuBtn from "../assets/hamb-btn.svg";
     menuSlider?.classList.remove("active");
     overlay?.classList.remove("overlay-active");
   });
+</script>
+
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',       // Default language of your site
+    includedLanguages: 'en,mk,al', // Languages you want to support
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" 
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>

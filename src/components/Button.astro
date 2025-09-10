@@ -1,0 +1,40 @@
+---
+const { title = "Learn more", link = "/catalog", class: extraClasses = "" } = Astro.props;
+---
+
+<a href={link} class=`btn ${extraClasses}` aria-label={title}>{title}</a>
+
+<style>
+  .btn {
+    background-color: blue;
+    color: white;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn--purple {
+    background-color: #7924a5 !important; 
+    color: white;
+  }
+  .btn--green {
+    background-color: #00a69c;
+    color: white;
+  }
+  .btn--orange {
+    background-color: #ff7d01;
+    color: white;
+  }
+
+  @media screen  and (max-width : 768px) {
+    .btn {
+       font-size : 1rem;
+       padding: 5px 15px;
+    }
+  }
+</style>

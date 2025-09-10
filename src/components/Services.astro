@@ -1,0 +1,154 @@
+---
+import check from '../assets/checkmark.svg';
+import Button from './Button.astro';
+---
+
+<div class="services-container">
+<div class="services-wrapper">
+<div class="services-wrapper__heading" >
+<h2 class="h1--extra-size"> Ahead of our Competitors</h2>
+<p>What we offer is quite different because the process starts with a great communication and support based in Skopje, then 
+our quality has exceeded the expectations of our clients.
+</p>
+<Button />
+
+</div>
+<div class="services-wrapper__list">
+<div class="services-list__item">
+<img src={check.src}/>
+<p>Premium Quality</p>
+</div>
+<div class="services-list__item">
+<img src={check.src}/>
+<p>Unique Designs</p>
+</div>
+<div class="services-list__item">
+<img src={check.src}/>
+<p>Exceptional Support</p>
+</div>
+<div class="services-list__item">
+<img src={check.src}/>
+<p>Great Location in Skopje</p>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<style>
+.services-container {
+  margin: 7rem auto;
+  padding: 1rem;
+}
+
+.services-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  gap: 10%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.services-container > div {
+  flex: 1 !important;
+}
+
+.services-container .services-wrapper__heading {
+  flex: 2;
+}
+
+.services-container .services-wrapper__list {
+  flex: 1;
+}
+
+.services-list__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.h1--extra-size {
+  font-size: 2.5rem;
+}
+
+.services-container img {
+  width: 2.5rem;
+  margin-right: 0.8rem;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(1.1);
+  transition: 0.9s all ease;
+}
+
+
+@media (max-width: 768px) {
+  .services-wrapper {
+    flex-direction: column;
+    width: 90%;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .services-container {
+    margin: 5rem auto;
+  }
+
+  .services-container .services-wrapper__heading,
+  .services-container .services-wrapper__list {
+    flex: unset;
+    width: 100%;
+  }
+
+  .h1--extra-size {
+    font-size: 2rem;
+  }
+
+  .services-list__item {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .services-container img {
+    margin: 0;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .h1--extra-size {
+    font-size: 1.6rem;
+  }
+
+  .services-container img {
+    width: 2rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+
+
+</style>
