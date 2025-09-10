@@ -36,24 +36,31 @@ import prod8 from "../assets/product-images/prod8.jpg";
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
 
-  .product {
-    display: flex;
-    flex-wrap: wrap; 
-    align-items: center;
-    justify-content: center; 
-    gap: 15px; 
-  }
+.product {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;   /* enables horizontal scroll */
+  white-space: nowrap; /* prevents wrapping */
+  padding: 0 1rem;
+  scrollbar-width: none; /* Firefox: hide scrollbar */
+}
 
-  .product img {
-    width: 120px;
-    max-width: 40vw; 
-    cursor: pointer !important;
-    transition: 0.3s all ease;
-  }
-  .product img:hover {
-    transform: translateY(-10px);
-    transition: 0.3s all ease;
-  }
+.product::-webkit-scrollbar {
+  display: none; /* Chrome/Safari: hide scrollbar */
+}
+
+.product img {
+  flex: 0 0 auto; /* prevents shrinking */
+  width: 120px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+.product img:hover {
+  transform: translateY(-10px);
+}
+
 
   @media screen and (max-width: 1024px) {
     .product-container {
